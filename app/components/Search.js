@@ -133,19 +133,19 @@ class Search extends Component {
     return content;
   }
 
-  buildAmazonLink(state) {
+  buildAmazonLink(state: Object) {
     const item = state.items[state.index];
     return 'http://www.amazon.co.jp/exec/obidos/asin/' + item.ASIN +'/' + ASSOC_ID + '/';
   }
 
-  buildRakutenLink(state) {
+  buildRakutenLink(state: Object) {
     return 'http://hb.afl.rakuten.co.jp/hgc/'
       + RAKUTEN_ID
       + '/?pc=http://search.rakuten.co.jp/search/mall?sitem='
       + state.searchWord + "&m=http://m.rakuten.co.jp/";
   }
 
-  buildYahooLink(state) {
+  buildYahooLink(state: Object) {
     return 'http://ck.jp.ap.valuecommerce.com/servlet/referral'
         + '?sid=' + YAHOO_SID
         + '&pid=' + YAHOO_PID
@@ -153,7 +153,7 @@ class Search extends Component {
         + state.searchWord;
   }
 
-  getImageURL(state) {
+  getImageURL(state: Object) {
     if (state.items[state.index].MediumImage === undefined) {
       return "";
     }

@@ -14,7 +14,7 @@ const initialState = {
   statusOpen: false,
 };
 
-export default function search(state = initialState, action: Object) {
+export default function search(state: Object = initialState, action: Object) {
   switch (action.type) {
     case SEARCH_WORD:
       return Object.assign({}, state, {

@@ -33,7 +33,7 @@ class Pagenation extends Component {
     );
   }
 
-  getCurrentPage(index, current) {
+  getCurrentPage(index: number, current: number) {
     if (index == current) {
       return true;
     }

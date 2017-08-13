@@ -12,7 +12,7 @@ export const OPEN_STATUS_BAR = 'OPEN_STATUS_BAR';
 
 import {opHelper} from '../config/apac';
 
-export function searchWord(searchWord, itemSearchResponse, currentPage) {
+export function searchWord(searchWord: string, itemSearchResponse: Object, currentPage: number) {
   return {
     type: SEARCH_WORD,
     searchWord: searchWord,
@@ -22,7 +22,7 @@ export function searchWord(searchWord, itemSearchResponse, currentPage) {
   };
 }
 
-export function searchWordAsync(category = 'All', word, itemPage = 1) {
+export function searchWordAsync(category: string = 'All', word: string, itemPage: number = 1) {
   return (dispatch: Function) => {
     dispatch(load());
     opHelper.execute('ItemSearch', {
@@ -43,7 +43,7 @@ export function searchWordAsync(category = 'All', word, itemPage = 1) {
   };
 }
 
-export function notify(message) {
+export function notify(message: string) {
   return { type: NOTIFY, message: message }
 }
 
@@ -51,18 +51,18 @@ export function toggleModal() {
   return { type: TOGGLE_MODAL }
 }
 
-export function showDialog(index) {
+export function showDialog(index: number) {
   return { type: SHOW_DIALOG, index: index }
 }
 
-export function nextResult(category, word, index) {
+export function nextResult(category: string, word: string, index: number) {
   return (dispatch: Function) => {
     dispatch(load());
     dispatch(searchWordAsync(category, word, index));
   }
 }
 
-export function changeCategory(category) {
+export function changeCategory(category: string) {
   return { type: CHANGE_CATEGORY, category: category}
 }
 
@@ -74,10 +74,10 @@ export function ready() {
   return { type: READY }
 }
 
-export function openStatusBar(message = "") {
+export function openStatusBar(message: string = "") {
   return { type: OPEN_STATUS_BAR, message: message}
 }
 
-export function closeStatusBar(message = "") {
+export function closeStatusBar(message: string = "") {
   return { type: CLOSE_STATUS_BAR, message: message }
 }
